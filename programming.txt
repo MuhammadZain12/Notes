@@ -1,0 +1,8 @@
+Question : What are Static & Dynamic Functions
+
+Answer :-
+- Static functions or methods belong to the class itself rather than any instance of the class. They don't require an instance of the class to be invoked and cannot access instance variables or methods because they don't have a this or self keyword. They are only instantiated once since they are static and for separate instances will always be identical.
+- Dynamic functions or methods belong to an instance of a class and can access both static and instance variables or methods. They can be instantiated multiple times, each time with its own unique instance working with potentially unique data.
+
+========================================================================================================================
+
