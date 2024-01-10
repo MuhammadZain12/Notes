@@ -1,0 +1,13 @@
+Q : is every controller ran by kube controller manager is infact an object in kubernetes cluster?
+
+Answer : 
+
+Yes, each controller managed by the Kubernetes controller manager is indeed an object within the Kubernetes cluster.
+
+In Kubernetes, a controller is a control loop that watches the shared state of the cluster via the API server. It then makes changes attempting to move the current state towards the desired state. Controllers are a fundamental concept in Kubernetes, as they automate many aspects of managing workloads 2.
+
+The Kubernetes controller manager is a component of the control plane, running in the form of a container within a Pod, on every master node. It is a collection of different Kubernetes controllers, all of them included in a binary and running permanently in a loop. Its main task is to watch for changes in the state of the objects, and make sure that the actual state converges towards the new desired state 3.
+
+Each controller running in the kube-controller-manager is responsible for reconciling its own kind of Object. For example, the ReplicaSet controller watches the desired number of replicas for a ReplicaSet and compares this number with the Pods matching its Pod selector. If the controller is informed via the watching mechanism of changes on the desired number of replicas, it acts accordingly, via the Kubernetes API 3.
+
+So, in summary, each controller managed by the Kubernetes controller manager is indeed an object within the Kubernetes cluster, playing a crucial role in maintaining the desired state of the cluster.
